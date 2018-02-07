@@ -1,33 +1,35 @@
-# CryptoGAS
+<h1 align="center">
+CryptoGAS
+</h1>
 This Google Apps Script library provide functions to retrieve values from cryptocurrency marketplace in order to build a portfolio.
 
-## Installation
+# Installation :zap:
 1. Create or open desired Google Sheets
 2. Open Tools >> Script Edit 
 3. Create `jsSHA.gs` and `CryptoGAS.gs` files with content from this repo
 
-## Supported Sites
+# Supported Sites
 Currently, CryptoGAS has API integration with below trading platforms:
 - Bittrex
 - HitBTC
-- Bitsane
+- Binance (In Development)
 
-## Usage
-### 1. Bittrex
+# Usage 
+## 1. Bittrex
 Open a sheet then type following function with all required parameters 
 `=Bittrex(apiMethod,apiKey,apiSecret, query, parseOptions)`
 
 |Parameter|Required|Description|
 |---------|:------:|-----------|
-|apiMethod|:heavy_check_mark:|See below for all supported methods|
-|apiKey   |:heavy_check_mark:|API Key obtained in the Settings|
-|apiSecret|:heavy_check_mark:|Secret passphrase to sign request|
-|query    |:x:|A comma-separated list of fields to import, decided by the path of the header. Use `rawHeaders` option below to get the path info|
-|parseOptions|:x:|A comma-separated list of these options: `noInherit`, `noTruncate`, `rawHeaders`, `noHeaders`, `noParseNumbers`, `debugLocation`|
+|apiMethod|:red_circle:|See below for all supported methods|
+|apiKey   |:red_circle:|API Key obtained in the Settings|
+|apiSecret|:red_circle:|Secret passphrase to sign request|
+|query    |:white_circle:|A comma-separated list of fields to import, decided by the path of the header. Use `rawHeaders` option below to get the path info|
+|parseOptions|:white_circle:|A comma-separated list of these options: `noInherit`, `noTruncate`, `rawHeaders`, `noHeaders`, `noParseNumbers`, `debugLocation`|
 
 **Example:** `=Bittrex('account/getbalances','myApiKey','mySecretKey')`
 
-#### apiMethod
+### apiMethod
 |Method|Status|Description|
 |------|:----:|-----------|
 |public/getmarkets|:heavy_check_mark:|Used to get the open and available trading markets at Bittrex along with other meta data.|
@@ -50,7 +52,7 @@ Methods with :x: required additional parameters which are not supported yet.
 API Reference: https://bittrex.com/Home/Api
 
 
-#### parseOptions
+### parseOptions
 |Option|Description|
 |------|-----------|
 |noInherit|Don't inherit values from parent elements|
@@ -60,21 +62,21 @@ API Reference: https://bittrex.com/Home/Api
 |noParseNumbers|Don't parse number from string, leave it as it is|
 |debugLocation|Prepend each value with the row & column it belongs in|
 
-### 2. HitBTC
+## 2. HitBTC
 Open a sheet then type following function with all required parameters 
 `=HitBTC(apiMethod,apiKey,apiSecret, query, parseOptions)`
 
 |Parameter|Required|Description|
 |---------|:------:|-----------|
-|apiMethod|:heavy_check_mark:|See below for all supported methods|
-|apiKey   |:heavy_check_mark:|API Key obtained in the Settings|
-|apiSecret|:heavy_check_mark:|Secret passphrase to sign request|
-|query    |:x:|A comma-separated list of fields to import, decided by the path of the header. Use `rawHeaders` option below to get the path info|
-|parseOptions|:x:|A comma-separated list of these options: `noInherit`, `noTruncate`, `rawHeaders`, `noHeaders`, `noParseNumbers`, `debugLocation`|
+|apiMethod|:red_circle:|See below for all supported methods|
+|apiKey   |:red_circle:|API Key obtained in the Settings|
+|apiSecret|:red_circle:|Secret passphrase to sign request|
+|query    |:white_circle:|A comma-separated list of fields to import, decided by the path of the header. Use `rawHeaders` option below to get the path info|
+|parseOptions|:white_circle:|A comma-separated list of these options: `noInherit`, `noTruncate`, `rawHeaders`, `noHeaders`, `noParseNumbers`, `debugLocation`|
 
 **Example:** `=HitBTC('account/balance','myApiKey','mySecretKey')`
 
-#### apiMethod
+### apiMethod
 |Method|Status|Description|
 |------|:----:|-----------|
 |public/currency|:heavy_check_mark:|Return the actual list of available currencies, tokens, ICO etc.|
@@ -98,25 +100,25 @@ Open a sheet then type following function with all required parameters
 
 Methods with :exclamation: only support default parameters. They will be functional when the script support additional parameters in the function. Check API Reference for default values: https://api.hitbtc.com
 
-### 3. Bitsane
+## 3. Bitsane
 _In development_
 
-## Roadmap
+# Roadmap
  - Support API Method parameters
  - Coinbase API
  - GDAX API
  - Bitfinex API
 
-## Donation
+# Donation
  - BTC: 16hDsVgy6VFW2aW8w9z2pogbq5XThToswF
  - ETH: 0x212799fbd9CD3e273E0CB6761b1708B284477e5E
  - LTC: LQtecz6SAbRzJXEfDpNLz8AzkhWKY4qQyv
  - BCH: 13mT5ubjZUKTviGXDSVHxRkrrxDFzzUFd4
 
-## Credits
+# Credits
 Thanks to below projects, developing CryptoGAS can be done as fast as possible.
  - [bradjasper/ImportJSON](https://github.com/bradjasper/ImportJSON)
  - [Caligatio/jsSHA](https://github.com/Caligatio/jsSHA/)
 
-## License
+# License
 Apache 2.0 License
